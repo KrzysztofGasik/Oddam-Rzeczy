@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const Header = () => {
   return (
     <header>
-      <div className='login__buttons'>
+      <div className="login__buttons">
         <button>Zaloguj się</button>
         <button>Załóż konto</button>
       </div>
@@ -16,6 +16,15 @@ const Header = () => {
           <li>Kontakt</li>
         </ul>
       </nav>
+      <div className="header__wrapper">
+        <p>Zacznij pomagać!</p>
+        <p>Oddaj niechciane rzeczy w zaufane ręce</p>
+        <img src="../img/decoration.png" />
+        <div className="header__buttons">
+          <button>ODDAJ RZECZY</button>
+          <button>ZORGANIZUJ ZBIÓRKĘ</button>
+        </div>
+      </div>
     </header>
   );
 };
