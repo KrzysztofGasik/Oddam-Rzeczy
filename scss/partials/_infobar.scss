@@ -1,0 +1,28 @@
+.infobar__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background: #f5c810;
+  .infobar__square {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    color: #5f5420;
+    span,
+    p {
+      padding: 10px 0;
+    }
+    .infobar__square__number {
+      font-size: 65px;
+      font-weight: 100;
+    }
+    .infobar__square__title {
+      text-transform: uppercase;
+    }
+  }
+}
