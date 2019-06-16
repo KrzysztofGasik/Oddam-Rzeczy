@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const About = () => {
   return (
-    <section className="about__wrapper">
+    <section className="about__wrapper" id="About">
       <div className="about__info">
         <span>O nas</span>
         <img src="../img/decoration.png" />
