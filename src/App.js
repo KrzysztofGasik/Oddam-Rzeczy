@@ -6,6 +6,8 @@ import { InfoBar } from "./Components/InfoBar/InfoBar";
 import { Begin } from "./Components/Begin/Begin";
 import { About } from "./Components/About/About";
 
+import { Footer } from "./Components/Footer/Footer";
+
 class App extends Component {
   render() {
     return (
@@ -14,6 +16,7 @@ class App extends Component {
         <InfoBar />
         <Begin />
         <About />
+        <Footer />
       </>
     );
   }
