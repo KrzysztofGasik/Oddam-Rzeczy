@@ -25,7 +25,7 @@ const BeginContent = [
 
 const Begin = () => {
   return (
-    <section className="begin__wrapper">
+    <section className="begin__wrapper" id="Begin">
         <span className="begin__title">Wystarczą 4 proste kroki</span>
         <img src="../img/decoration.png" />
         <div className="begin__info">

@@ -20,7 +20,7 @@ const InfoBarContent = [
 
 const InfoBar = () => {
   return (
-    <section className="infobar__wrapper">
+    <section className="infobar__wrapper" id="InfoBar">
       {
         InfoBarContent.map((val,index)=>{
             return (
