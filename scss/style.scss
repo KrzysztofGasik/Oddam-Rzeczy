@@ -4,6 +4,7 @@
 @import "partials/about";
 @import "partials/funds";
 @import "partials/footer";
+@import "partials/login";
 
 * {
   margin: 0;
@@ -17,7 +18,8 @@ body,
   height: 100%;
 }
 
-.scrollBottom, .scrollTop {
+.scrollBottom,
+.scrollTop {
   opacity: 0.7;
   background: #000;
   width: 50px;

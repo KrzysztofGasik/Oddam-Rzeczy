@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
-          <i class="fas fa-arrow-down" />
+          <i className="fas fa-arrow-down" />
         </button>
         <Header />
         <InfoBar />
@@ -31,7 +31,7 @@ class App extends Component {
         <Funds />
         <Footer />
         <button className="scrollTop" onClick={this.scrollToTop}>
-          <i class="fas fa-arrow-up" />
+          <i className="fas fa-arrow-up" />
         </button>
       </>
     );
