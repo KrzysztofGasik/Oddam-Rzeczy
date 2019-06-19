@@ -18,8 +18,8 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    button:last-child {
-      margin-top: 25px;
+    button:nth-child(2) {
+      margin-top: 35px;
     }
     button {
       border: 1px solid rgba(0, 0, 0, 1);
