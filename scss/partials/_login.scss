@@ -1,7 +1,14 @@
-.login__form {
+.login__curtain {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  .login__form {
+    background: #fff;
     width: 500px;
     height: 500px;
-    background: rgba(255,255,255, 0.95);
     position: fixed;
     top: calc(50vh - 500px / 2);
     left: calc(50vw - 500px / 2);
@@ -35,3 +42,4 @@
       cursor: pointer;
     }
   }
+}
