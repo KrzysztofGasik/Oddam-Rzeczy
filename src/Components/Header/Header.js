@@ -20,6 +20,7 @@ class Header extends Component {
   }
 
   render() {
+    // {this.props.user ? zalogowany : niezalogowany}
     return (
       <header>
         <div className="login__buttons">
