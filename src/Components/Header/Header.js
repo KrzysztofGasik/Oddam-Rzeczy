@@ -2,27 +2,34 @@ import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Login } from "../Login/Login";
 
-class Header extends Component {
+const BgBeforeLog = {
+  backgroundImage: "url('../img/header_start_img.jpg')"
+};
 
+const BgAfterLog = {
+  backgroundImage: "url('../img/header_logged_img.jpg')"
+};
+
+class Header extends Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       showLoginPanel: false
-    }
+    };
   }
 
   ShowLoginPanel = () => {
-    this.setState(prevState=>{
+    this.setState(prevState => {
       return {
         showLoginPanel: !prevState.showLoginPanel
-      }
-    })
-  }
+      };
+    });
+  };
 
   render() {
     // {this.props.user ? zalogowany : niezalogowany}
     return (
-      <header>
+      <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         <div className="login__buttons">
           <button>Zaloguj się</button>
           <button>Załóż konto</button>

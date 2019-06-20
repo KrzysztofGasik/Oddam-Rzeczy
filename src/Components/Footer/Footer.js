@@ -7,7 +7,8 @@ class Footer extends Component {
       name: "",
       email: "",
       message: "",
-      success: false
+      success: false,
+      error: false
     };
   }
 
@@ -21,21 +22,40 @@ class Footer extends Component {
     e.preventDefault();
     if (
       this.state.name != "" &&
-      this.state.email != "" &&
+      (this.state.email != "" &&
+        this.state.email.includes("@") &&
+        this.state.email.includes(".")) &&
       this.state.message != ""
     ) {
-      this.setState({
-        success: true,
-        name: "",
-        email: "",
-        message: ""
-      },()=> {
-        this.timer = setTimeout(() => {
-          this.setState({
-            success: false
-          });
-        }, 5000);
-      });
+      this.setState(
+        {
+          success: true,
+          name: "",
+          email: "",
+          message: ""
+        },
+        () => {
+          this.timer = setTimeout(() => {
+            this.setState({
+              success: false,
+              error: false
+            });
+          }, 1000);
+        }
+      );
+    } else {
+      this.setState(
+        {
+          error: true
+        },
+        () => {
+          this.timer = setTimeout(() => {
+            this.setState({
+              error: false
+            });
+          }, 1000);
+        }
+      );
     }
   };
 
@@ -46,7 +66,7 @@ class Footer extends Component {
   render() {
     return (
       <footer id="Footer">
-        <form className="footer__wrapper">
+        <div className="footer__wrapper">
           <span>Skontaktuj się z nami</span>
           <img src="../img/decoration.png" />
           <div className="contact__form">
@@ -74,10 +94,23 @@ class Footer extends Component {
               value={this.state.message}
               onChange={e => this.changeForm(e, "message")}
             />
-            <input type="submit" value="Wyślij" onClick={this.ValidateSubmit}/>
+            <input type="submit" value="Wyślij" onClick={this.ValidateSubmit} />
           </div>
-          {this.state.success ? <span style={{color: 'red'}}>Formularz wysłany, dzięki</span> : <p>Uzupełnij formularz</p>}
-        </form>
+          {this.state.success && (
+            <span style={{ color: "red" }}>Formularz wysłany, dzięki</span>
+          )}
+          {this.state.error && (
+            <span style={{ color: "red" }}>Uzupełnij pola formularza</span>
+          )}
+        </div>
+        <div className="footer__social">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="../img/fb.png" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="../img/insta.png" />
+          </a>
+        </div>
       </footer>
     );
   }
