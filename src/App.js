@@ -24,16 +24,15 @@ class App extends Component {
         <button className="scrollBottom" onClick={this.scrollToBottom}>
           <i className="fas fa-arrow-down" />
         </button>
-        <Header user={false}/> {/* user - props przed zalogowanie i po zalogowaniu */}
-        <InfoBar />
-        <Begin />
-        <LandingPage />
+        <Header user={true}/> {/* user - props przed zalogowanie i po zalogowaniu */}
+        <InfoBar user={true}/>
+        <Begin user={true}/>
+        <LandingPage user={true}/>
         <Footer />
         <button className="scrollTop" onClick={this.scrollToTop}>
           <i className="fas fa-arrow-up" />
         </button>
         <HashRouter>
-
         </HashRouter>
       </>
     );
