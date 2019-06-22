@@ -63,5 +63,27 @@ header {
         cursor: pointer;
       }
     }
+    .header__step__wrapper {
+      display: flex;
+      .header__step {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        transform: rotate(-45deg);
+        width: 100px;
+        height: 100px;
+        margin: 50px 10px 0;
+        padding: 10px;
+        .header__step__content {
+          transform: rotate(45deg);
+        }
+        p {
+          text-align: center;
+          font-size: 0.8em;
+        }
+      }
+    }
   }
 }

@@ -6,7 +6,7 @@ import { Begin } from "./Components/Begin/Begin";
 import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Footer } from "./Components/Footer/Footer";
 import { animateScroll as scroll } from "react-scroll";
-import {HashRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import "../scss/style.scss";
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <BrowserRouter>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
           <i className="fas fa-arrow-down" />
         </button>
@@ -32,12 +32,15 @@ class App extends Component {
         <button className="scrollTop" onClick={this.scrollToTop}>
           <i className="fas fa-arrow-up" />
         </button>
-        <HashRouter>
-        </HashRouter>
-      </>
+      </BrowserRouter> 
     );
   }
 }
+
+        {/*
+          <Route path="/register" exact component={Register} />
+          <Route path="/login" exact component={Login} />
+        */}
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDom.render(<App />, document.querySelector("#app"));
