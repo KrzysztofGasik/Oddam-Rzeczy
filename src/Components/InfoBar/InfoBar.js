@@ -18,6 +18,19 @@ const InfoBarContent = [
   }
 ];
 
+const InfoBarLog = [
+  {
+    id: 1,
+    title: 'Ważne!',
+    content: 'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu je przekazać'
+  }
+  // {
+  //   id: 2,
+  //   title: 'Ważne!',
+  //   content: 'Wszystkie rzeczy do oddania zapakuj w 60 l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ'
+  // }
+]
+
 const InfoBarBeforeLog = () => {
   return (
     <section className="infobar__wrapper" id="InfoBar">
@@ -37,13 +50,14 @@ const InfoBarBeforeLog = () => {
 const InfoBarAfterLog = () => {
   return (
     <section className="infobar__wrapper__after" id="InfoBar">
-      <div>
-        <h2>Ważne!</h2>
-        <p>
-          Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-          wiedzieć komu je przekazać
-        </p>
-      </div>
+      {InfoBarLog.map((val, index) => {
+        return (
+          <div key={index}>
+            <h1>{val.title}</h1>
+            <p>{val.content}</p>
+          </div>
+        );
+      })}
     </section>
   );
 };

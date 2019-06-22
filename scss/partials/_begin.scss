@@ -35,7 +35,7 @@
   }
   button {
     border: 1px solid black;
-    background: #fff;
+    background: transparent;
     margin: $default-margin;
     font-size: 1em;
     width: 250px;
@@ -45,6 +45,7 @@
   }
   button:hover {
     cursor: pointer;
+    background: #fff;
   }
   span {
     font-size: 1.5em;
@@ -60,7 +61,6 @@
     label {
       font-size: 1.5em;
     }
-     
   }
 }
 

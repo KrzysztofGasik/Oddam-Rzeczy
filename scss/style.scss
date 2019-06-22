@@ -22,7 +22,8 @@ body,
 }
 
 .scrollBottom,
-.scrollTop {
+.scrollTop,
+.LogOn {
   opacity: 0.7;
   background: #000;
   width: 50px;
@@ -47,4 +48,11 @@ body,
 .scrollTop {
   bottom: 10px;
   right: 10px;
+}
+
+.LogOn {
+  top: 50%;
+  right: 10px;
+  color: #fff;
+  width: 100px;
 }

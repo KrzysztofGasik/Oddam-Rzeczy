@@ -10,6 +10,13 @@ import {BrowserRouter} from "react-router-dom";
 import "../scss/style.scss";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      change: false
+    }
+  }
+
   scrollToTop = () => {
     scroll.scrollToTop();
   };
@@ -18,16 +25,27 @@ class App extends Component {
     scroll.scrollToBottom();
   };
 
+  changeLog = () => {
+    this.setState(prevState=>{
+      return {
+        change: !prevState.change
+      }
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
           <i className="fas fa-arrow-down" />
         </button>
-        <Header user={true}/> {/* user - props przed zalogowanie i po zalogowaniu */}
-        <InfoBar user={true}/>
-        <Begin user={true}/>
-        <LandingPage user={true}/>
+        <button className="LogOn" onClick={this.changeLog}>
+          Logowanie
+        </button>
+        <Header user={this.state.change ? true : false}/> {/* user - props przed zalogowanie i po zalogowaniu */}
+        <InfoBar user={this.state.change ? true : false}/>
+        <Begin user={this.state.change ? true : false}/>
+        <LandingPage user={this.state.change ? true : false}/>
         <Footer />
         <button className="scrollTop" onClick={this.scrollToTop}>
           <i className="fas fa-arrow-up" />
