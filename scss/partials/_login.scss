@@ -4,42 +4,46 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  .login__form {
-    background: #fff;
-    width: 500px;
-    height: 500px;
-    position: fixed;
-    top: calc(50vh - 500px / 2);
-    left: calc(50vw - 500px / 2);
-    border-radius: 8px;
-    padding: 20px;
+  background: #fff;
+  .login__wrapper {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    button:nth-child(2) {
-      margin: $default-margin;
-    }
-    button {
-      border: 1px solid rgba(0, 0, 0, 1);
-      background: #fff;
+    margin: $default-margin;
+    p {
       font-size: 1.5em;
-      width: 200px;
-      padding: 20px;
     }
-    button:hover {
-      cursor: pointer;
+    .login__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin: $default-margin;
+      width: 500px;
+      input {
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #000;
+        padding: 20px;
+        width: 100%;
+      }
     }
-    span {
-      position: absolute;
-      right: 10;
-      top: 10;
-      font-size: 35px;
-      font-weight: 900;
-    }
-    span:hover {
-      cursor: pointer;
+    .login__buttons {
+      display: flex;
+      justify-content: space-around;
+      width: 40%;
+      button {
+        border: 1px solid #000;
+        padding: 15px;
+        background: transparent;
+        margin: 25px 10px;
+      }
+      button:hover {
+        border-color: rgba(0, 0, 0, 1);
+        cursor: pointer;
+      }
     }
   }
 }

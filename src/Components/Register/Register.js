@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      password2: ""
     };
   }
 
@@ -19,11 +20,11 @@ class Login extends Component {
     return (
       <>
         {this.state.hide ? null : (
-          <section className="login__curtain">
-            <div className="login__wrapper">
-              <p>Zaloguj się</p>
+          <section className="register__curtain">
+            <div className="register__wrapper">
+              <p>Załóż konto</p>
               <img src="../img/decoration.png" />
-              <div className="login__form">
+              <div className="register__form">
                 <input
                   type="email"
                   id="email"
@@ -38,10 +39,17 @@ class Login extends Component {
                   value={this.state.password}
                   onChange={e => this.changeForm(e, "password")}
                 />
+                <input
+                  type="password"
+                  id="password2"
+                  placeholder="Repeat password"
+                  value={this.state.password2}
+                  onChange={e => this.changeForm(e, "password")}
+                />
               </div>
-              <div className="login__buttons">
-                <button>Załóż konto</button>
+              <div className="register__buttons">
                 <button>Zaloguj</button>
+                <button>Załóż konto</button>
               </div>
             </div>
           </section>
@@ -51,4 +59,4 @@ class Login extends Component {
   }
 }
 
-export { Login };
+export { Register };
