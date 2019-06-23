@@ -49,7 +49,6 @@ class Header extends Component {
 
   render() {
     // {this.props.user ? zalogowany : niezalogowany}
-    console.log(Steps);
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         <div className="login__buttons">
