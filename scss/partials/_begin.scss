@@ -64,6 +64,54 @@
   }
 }
 
+.begin__wrapper__after {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 25px 0 25px 10% ;
+  button {
+    border: 1px solid black;
+    background: transparent;
+    margin: $default-margin;
+    font-size: 1em;
+    width: 250px;
+    padding: 25px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  button:hover {
+    cursor: pointer;
+    background: #fff;
+  }
+  span {
+    margin: $default-margin;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 25px 10px 25px 0;
+      width: 35px;
+      height: 35px;
+    }
+    label {
+      font-size: 1.5em;
+    }
+  }
+  #bags {
+    width: 250px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 24px;
+  }
+  .begin__wrapper__button {
+    display: block;
+    padding: 10px;
+   #next {
+      margin-left: 25px;
+    }
+  }
+}
+
 .fa-hands,
 .fa-download,
 .fa-binoculars,
