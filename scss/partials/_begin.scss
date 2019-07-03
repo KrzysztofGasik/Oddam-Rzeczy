@@ -67,7 +67,7 @@
 .begin__wrapper__after {
   display: flex;
   flex-flow: column wrap;
-  margin: 25px 0 25px 10% ;
+  padding: 10px;
   button {
     border: 1px solid black;
     background: transparent;
@@ -88,6 +88,7 @@
   form {
     display: flex;
     flex-direction: column;
+    margin: 25px 0 25px 10% ;
     input {
       margin: 25px 10px 25px 0;
       width: 35px;

@@ -51,11 +51,25 @@ class Header extends Component {
     // {this.props.user ? zalogowany : niezalogowany}
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
-        <div className="login__buttons">
-          <button>Zaloguj się</button>
-          <button>Załóż konto</button>
-        </div>
-        <nav>
+        {this.props.user ? (
+          <div className="login__buttons" style={{marginRight: '90px'}}>
+            <span>Witaj user 
+              <i className="fas fa-cog">
+                <ul>
+                  <li>Profil</li>
+                  <li>Ustawienia</li>
+                  <li>Moje zbiórki</li>
+                  <li>Wyloguj</li>
+                </ul>
+              </i></span>
+          </div>
+        ) : (
+          <div className="login__buttons">
+            <button>Zaloguj się</button>
+            <button>Załóż konto</button>
+          </div>
+        )}
+        <nav >
           <Link
             to="InfoBar"
             spy={true}
@@ -90,16 +104,16 @@ class Header extends Component {
             <img src="../img/decoration.png" />
             <p>Wystarczą 4 proste kroki</p>
             <div className="header__step__wrapper">
-            {Steps.map((val, index) => {
-              return (
-                <div className="header__step" key={index}>
-                  <div className="header__step__content">
-                    <p>{val.stepNumber}</p>
-                    <p>{val.stepText}</p>
+              {Steps.map((val, index) => {
+                return (
+                  <div className="header__step" key={index}>
+                    <div className="header__step__content">
+                      <p>{val.stepNumber}</p>
+                      <p>{val.stepText}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
             </div>
           </div>
         ) : (
