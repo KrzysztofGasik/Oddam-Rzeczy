@@ -22,13 +22,66 @@
       width: 200px;
     }
     button:hover {
-        border-color: rgba(0, 0, 0, 1);
-        cursor: pointer;
+      border-color: rgba(0, 0, 0, 1);
+      cursor: pointer;
     }
   }
   p {
-      width: 500px;
-      text-align: center;
-      margin: $default-margin;
+    width: 500px;
+    text-align: center;
+    margin: $default-margin;
+  }
+  .funds__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .funds__list__left {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    h3 {
+      margin: 15px 0 0 0;
+      font-weight: 400;
+    }
+    p {
+      text-align: left;
+      font-size: 0.75em;
+      margin: 0;
+    }
+    hr {
+      width: 65%;
+      margin: 15px 0 0 0;
+    }
+  }
+  .funds__list__right {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    h3 {
+      color: transparent;
+      margin: 15px 0 0 0;
+      font-weight: 400;
+    }
+    p {
+      text-align: right;
+      font-size: 0.75em;
+      margin: 0;
+    }
+    hr {
+      width: 65%;
+      margin: 15px 0 0 0;
+    }
+  }
+  .funds__list__pages {
+    display: flex;
+    span {
+      padding: 0 5px;
+      font-size: 0.85em;
+      border: 1px solid rgba(0, 0, 0, 0);
+    }
+    span:hover {
+      border-color: rgba(0, 0, 0, 1);
+      cursor: pointer;
+    }
   }
 }
