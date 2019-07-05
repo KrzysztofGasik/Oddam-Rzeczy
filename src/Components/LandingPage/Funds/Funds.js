@@ -38,7 +38,7 @@ const Funds = () => {
           <div className="funds__list" key={val.name}>
             <div className="funds__list__left" >
             <h3>{val.name}</h3>
-            <p> {val.aim}</p>
+            <p>Cel i misja: {val.aim}</p>
               <hr />
             </div>
             <div className="funds__list__right">
