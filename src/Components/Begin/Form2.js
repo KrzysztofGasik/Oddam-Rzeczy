@@ -10,8 +10,9 @@ class Form2 extends Component {
   render() {
     return [
       <InfoBarAfterStep2 key={'InfoBarAfterStep2'} />,
-      <Wrapper>
+      <Wrapper key={'Wrapper'}>
       <form id="step2" >
+        <span>Krok 2/4</span>
         <label>Podaj liczbę 60l worków, w które zostaną spakowane rzeczy:
         <select id="bags" onChange={this.handleOnChange}>
           <option defaultValue="wybierz">-wybierz-</option>

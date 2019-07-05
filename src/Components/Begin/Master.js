@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form1 } from "./Form1";
 import { Form2 } from "./Form2";
+import { Form3 } from "./Form3";
 
 class Master extends Component {
   constructor(props) {
@@ -43,6 +44,13 @@ class Master extends Component {
       case 2:
         return (
           <Form2
+            onSave={this.handleOnSave}
+            step={step => this.updateStep(step)}
+          />
+        );
+      case 3:
+        return (
+          <Form3
             onSave={this.handleOnSave}
             step={step => this.updateStep(step)}
           />
