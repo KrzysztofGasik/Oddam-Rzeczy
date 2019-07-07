@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import {Register} from "../Register/Register";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      register: false
     };
   }
 
@@ -15,10 +17,17 @@ class Login extends Component {
     });
   };
 
+  showRegistrationForm = () => {
+    this.setState({
+      register: true
+    })
+  }
+
   render() {
+    console.log(this.state.reg);
     return (
       <>
-        {this.state.hide ? null : (
+        {this.state.register ? true : (
           <section className="login__curtain">
             <div className="login__wrapper">
               <p>Zaloguj się</p>
@@ -40,8 +49,9 @@ class Login extends Component {
                 />
               </div>
               <div className="login__buttons">
-                <button>Załóż konto</button>
+                <button onClick={this.showRegistrationForm}>Załóż konto</button>
                 <button>Zaloguj</button>
+                {this.state.reg && <Register />}
               </div>
             </div>
           </section>

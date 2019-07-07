@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Register } from "../Register/Register";
+// import { Login } from "../Login/Login";
 
 const BgBeforeLog = {
   backgroundImage: "url('../img/header_start_img.jpg')"
@@ -34,7 +35,8 @@ class Header extends Component {
     super(props);
     this.state = {
       showLoginPanel: false,
-      username: localStorage.getItem('login')
+      username: localStorage.getItem("login"),
+      log: 0
     };
   }
 
@@ -46,13 +48,21 @@ class Header extends Component {
     });
   };
 
+  updateLog = log => {
+    this.setState({
+      log: log
+    });
+  };
+
   render() {
     // {this.props.user ? zalogowany : niezalogowany}
+    // console.log(this.state.log)
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         {this.props.user ? (
-          <div className="login__buttons" style={{marginRight: '90px'}}>
-            <span>Witaj {this.state.username} 
+          <div className="login__buttons" style={{ marginRight: "90px" }}>
+            <span>
+              Witaj {this.state.username}
               <i className="fas fa-cog">
                 <ul>
                   <li>Profil</li>
@@ -60,16 +70,21 @@ class Header extends Component {
                   <li>Moje zbiórki</li>
                   <li>Wyloguj</li>
                 </ul>
-              </i></span>
+              </i>
+            </span>
           </div>
         ) : (
           <div className="login__buttons">
-            <button>Zaloguj się</button>
+            <button onClick={this.ShowLoginPanel}>Zaloguj się</button>
+            {/* {this.state.showLoginPanel ? <Login /> : null} */}
             <button onClick={this.ShowLoginPanel}>Załóż konto</button>
-            {this.state.showLoginPanel ? <Register reg={this.state.register}/> : null}
+            {this.state.showLoginPanel ? (
+              <Register log={log => this.updateLog(log)} />
+              //<Register  />
+            ) : null}
           </div>
         )}
-        <nav >
+        <nav>
           <Link
             to="InfoBar"
             spy={true}

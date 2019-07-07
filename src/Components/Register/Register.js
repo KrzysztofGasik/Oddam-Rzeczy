@@ -7,7 +7,7 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
-      register: localStorage.getItem('login') ? true : false
+      register: localStorage.getItem('login') != null ? true : false
     };
   }
 
@@ -17,7 +17,7 @@ class Register extends Component {
     });
   };
 
-  validRegistration = e => {
+  validRegistration = (e,log) => {
     e.preventDefault();
     if (this.state.password === this.state.password2) {
       const str = this.state.email;
@@ -66,7 +66,7 @@ class Register extends Component {
               </div>
               <div className="register__buttons">
                 <button onClick={this.validLog}>Zaloguj</button>
-                <button onClick={this.validRegistration}>Załóż konto</button>
+                <button onClick={(e)=>this.validRegistration(e,this.props.log(1))}>Załóż konto</button>
               </div>
             </div>
           </section>
@@ -75,5 +75,4 @@ class Register extends Component {
     );
   }
 }
-
 export { Register };

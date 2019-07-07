@@ -12,8 +12,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      change: false,
-      step: 0
+      logOn: false,
+      step: 0,
+      log: 0
     };
   }
 
@@ -28,7 +29,7 @@ class App extends Component {
   changeLog = () => {
     this.setState(prevState => {
       return {
-        change: !prevState.change
+        logOn: !prevState.logOn
       };
     });
   };
@@ -39,21 +40,29 @@ class App extends Component {
     });
   };
 
+  updateLog2 = log => {
+    this.setState({
+      log: log
+    });
+  };
+
   render() {
+    console.log(this.state.log)
     return (
       <BrowserRouter>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
           <i className="fas fa-arrow-down" />
         </button>
-        <button className="LogOn" onClick={this.changeLog}>
-          Logowanie
-        </button>
-        <Header user={this.state.change ? true : false} />
+        <Header
+          user={this.state.logOn ? true : false}
+          // updateLog={this.updateLog}
+          log={log => this.updateLog2(log)}
+        />
         <Begin
-          user={this.state.change ? true : false}
+          user={this.state.logOn ? true : false}
           updateStep={this.updateStep}
         />
-        <LandingPage user={this.state.change ? true : false} />
+        <LandingPage user={this.state.logOn ? true : false} />
         <Footer />
         <button className="scrollTop" onClick={this.scrollToTop}>
           <i className="fas fa-arrow-up" />
