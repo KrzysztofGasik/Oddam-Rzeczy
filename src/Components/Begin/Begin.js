@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Master } from "./Master";
 import {InfoBarBeforeLog} from "../InfoBar/InfoBarBefore";
+import { Register } from "../Register/Register";
 
 const BeginContent = [
   {

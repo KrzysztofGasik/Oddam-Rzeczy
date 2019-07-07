@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { Login } from "../Login/Login";
 import { Register } from "../Register/Register";
-import { Route } from "react-router-dom";
 
 const BgBeforeLog = {
   backgroundImage: "url('../img/header_start_img.jpg')"
@@ -35,7 +33,8 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLoginPanel: false
+      showLoginPanel: false,
+      username: localStorage.getItem('login')
     };
   }
 
@@ -53,7 +52,7 @@ class Header extends Component {
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         {this.props.user ? (
           <div className="login__buttons" style={{marginRight: '90px'}}>
-            <span>Witaj user 
+            <span>Witaj {this.state.username} 
               <i className="fas fa-cog">
                 <ul>
                   <li>Profil</li>
@@ -66,7 +65,8 @@ class Header extends Component {
         ) : (
           <div className="login__buttons">
             <button>Zaloguj się</button>
-            <button>Załóż konto</button>
+            <button onClick={this.ShowLoginPanel}>Załóż konto</button>
+            {this.state.showLoginPanel ? <Register reg={this.state.register}/> : null}
           </div>
         )}
         <nav >
