@@ -6,7 +6,8 @@ class Register extends Component {
     this.state = {
       email: "",
       password: "",
-      password2: ""
+      password2: "",
+      register: localStorage.getItem('login') ? true : false
     };
   }
 
@@ -16,10 +17,26 @@ class Register extends Component {
     });
   };
 
+  validRegistration = e => {
+    e.preventDefault();
+    if (this.state.password === this.state.password2) {
+      const str = this.state.email;
+      const nameReplace = str.replace(/@.*$/, "");
+      const name = nameReplace !== str ? nameReplace : null;
+
+      localStorage.setItem("login", name);
+      localStorage.setItem("password", password.value);
+
+      this.setState({
+        register: true
+      });
+    }
+  };
+
   render() {
     return (
       <>
-        {this.state.hide ? null : (
+        {this.state.register ? true : (
           <section className="register__curtain">
             <div className="register__wrapper">
               <p>Załóż konto</p>
@@ -44,12 +61,12 @@ class Register extends Component {
                   id="password2"
                   placeholder="Repeat password"
                   value={this.state.password2}
-                  onChange={e => this.changeForm(e, "password")}
+                  onChange={e => this.changeForm(e, "password2")}
                 />
               </div>
               <div className="register__buttons">
-                <button>Zaloguj</button>
-                <button>Załóż konto</button>
+                <button onClick={this.validLog}>Zaloguj</button>
+                <button onClick={this.validRegistration}>Załóż konto</button>
               </div>
             </div>
           </section>
