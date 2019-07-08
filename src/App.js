@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logOn: false,
+      logOn: localStorage.getItem("login") != null ? true : false,
       step: 0,
       log: 0
     };
@@ -26,28 +26,14 @@ class App extends Component {
     scroll.scrollToBottom();
   };
 
-  changeLog = () => {
-    this.setState(prevState => {
-      return {
-        logOn: !prevState.logOn
-      };
-    });
-  };
-
   updateStep = step => {
     this.setState({
       step: step
     });
   };
 
-  updateLog2 = log => {
-    this.setState({
-      log: log
-    });
-  };
-
   render() {
-    console.log(this.state.log)
+    // console.log(this.state.log);
     return (
       <BrowserRouter>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
@@ -55,8 +41,6 @@ class App extends Component {
         </button>
         <Header
           user={this.state.logOn ? true : false}
-          // updateLog={this.updateLog}
-          log={log => this.updateLog2(log)}
         />
         <Begin
           user={this.state.logOn ? true : false}
