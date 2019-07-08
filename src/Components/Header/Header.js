@@ -52,11 +52,10 @@ class Header extends Component {
     this.setState({
       log: log
     });
+    window.location.reload();
   };
 
   render() {
-    // {this.props.user ? zalogowany : niezalogowany}
-    // console.log(this.state.log)
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         {this.props.user ? (
@@ -80,7 +79,6 @@ class Header extends Component {
             <button onClick={this.ShowLoginPanel}>Załóż konto</button>
             {this.state.showLoginPanel ? (
               <Register log={log => this.updateLog(log)} />
-              //<Register  />
             ) : null}
           </div>
         )}
