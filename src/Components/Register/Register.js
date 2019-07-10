@@ -17,7 +17,7 @@ class Register extends Component {
     });
   };
 
-  validRegistration = (e,log) => {
+  validRegistration = (e,reg) => {
     e.preventDefault();
     if (this.state.password === this.state.password2) {
       const str = this.state.email;
@@ -25,11 +25,14 @@ class Register extends Component {
       const name = nameReplace !== str ? nameReplace : null;
 
       localStorage.setItem("login", name);
-      localStorage.setItem("password", password.value);
+      localStorage.setItem("password", this.state.password);
 
       this.setState({
+        reg: reg,
         register: true
       });
+    } else {
+      alert('Hasła muszą być identyczne');
     }
   };
 
@@ -66,7 +69,7 @@ class Register extends Component {
               </div>
               <div className="register__buttons">
                 <button onClick={this.validLog}>Zaloguj</button>
-                <button onClick={(e)=>this.validRegistration(e,this.props.log(1))}>Załóż konto</button>
+                <button onClick={(e)=>this.validRegistration(e,this.props.reg(1))}>Załóż konto</button>
               </div>
             </div>
           </section>
