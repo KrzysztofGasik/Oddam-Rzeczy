@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Register } from "../Register/Register";
-// import { Login } from "../Login/Login";
+import { Login } from "../Login/Login";
 
 const BgBeforeLog = {
   backgroundImage: "url('../img/header_start_img.jpg')"
@@ -48,11 +48,19 @@ class Header extends Component {
     });
   };
 
+  updateReg = reg => {
+    this.setState({
+      reg: reg,
+      showLoginPanel: false
+    });
+  };
+
   updateLog = log => {
     this.setState({
-      log: log
+      log: log,
+      showLoginPanel: false
     });
-    window.location.reload();
+  // window.location.reload();
   };
 
   render() {
@@ -75,10 +83,12 @@ class Header extends Component {
         ) : (
           <div className="login__buttons">
             <button onClick={this.ShowLoginPanel}>Zaloguj się</button>
-            {/* {this.state.showLoginPanel ? <Login /> : null} */}
+            {this.state.showLoginPanel ? (
+              <Login log={log => this.updateLog(log)} />
+            ) : null}
             <button onClick={this.ShowLoginPanel}>Załóż konto</button>
             {this.state.showLoginPanel ? (
-              <Register log={log => this.updateLog(log)} />
+              <Register reg={reg => this.updateReg(reg)} />
             ) : null}
           </div>
         )}

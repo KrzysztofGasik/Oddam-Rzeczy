@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {Register} from "../Register/Register";
 
 class Login extends Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      register: false
+      login: false
     };
   }
 
@@ -19,15 +18,34 @@ class Login extends Component {
 
   showRegistrationForm = () => {
     this.setState({
-      register: true
+      login: true
     })
   }
 
+  validLogIn = (e,log) => {
+    e.preventDefault();
+    const EmailStore= localStorage.getItem("login");
+    const Str = this.state.email;
+    const NameReplace = Str.replace(/@.*$/, "");
+    const EmailType = NameReplace !== Str ? NameReplace : null;
+    const PasswordStore = localStorage.getItem("password");
+    const PasswordType = this.state.password;
+    console.log(EmailStore,EmailType,PasswordStore,PasswordType);
+    if ((EmailStore == EmailType) && (PasswordStore == PasswordType)) {
+      this.setState({
+        log: log,
+        login: true
+      });
+      window.location.reload();
+    } else {
+      alert("nazwa użytkownika lub hasło niepoprawne");
+    }
+  };
+
   render() {
-    console.log(this.state.reg);
     return (
       <>
-        {this.state.register ? true : (
+        {this.state.login ? true : (
           <section className="login__curtain">
             <div className="login__wrapper">
               <p>Zaloguj się</p>
@@ -49,9 +67,8 @@ class Login extends Component {
                 />
               </div>
               <div className="login__buttons">
-                <button onClick={this.showRegistrationForm}>Załóż konto</button>
-                <button>Zaloguj</button>
-                {this.state.reg && <Register />}
+                <button>Załóż konto</button>
+                <button onClick={(e)=>this.validLogIn(e,this.props.log(1))}>Zaloguj</button>
               </div>
             </div>
           </section>
