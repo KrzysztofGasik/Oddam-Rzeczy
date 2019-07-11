@@ -42,6 +42,7 @@ class Form3 extends Component {
             </select>
           </label>
           <h3>Komu chcesz pomóc?</h3>
+          <div className="begin__wrapper_options">
           <label>
             <input
               type="checkbox"
@@ -82,6 +83,7 @@ class Form3 extends Component {
             />
             osobom starszym
           </label>
+          </div>
           <label id="searchBar">
             Wpisz nazwę konkretnej organizacji (opcjonalnie)
             <input
@@ -95,7 +97,7 @@ class Form3 extends Component {
               Wstecz
             </button>
             <button id="next" onClick={() => this.props.step(4)}>
-              Dalej
+              Szukaj
             </button>
           </div>
         </form>

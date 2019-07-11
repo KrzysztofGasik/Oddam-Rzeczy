@@ -126,6 +126,19 @@
     padding: 40px;
     font-size: 1em;
   }
+  .begin__wrapper_options {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    label {
+      padding: 0 15px;
+    }
+  }
+  .hr__custom {
+    width: 50%;
+  }
+  
 }
 
 .fa-hands,
