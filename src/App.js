@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logOn: localStorage.getItem("login") != null ? true : false,
+      logOn: localStorage.getItem("success") == 1 ? true : false,
       step: 0,
       log: 0
     };

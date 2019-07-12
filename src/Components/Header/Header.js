@@ -63,6 +63,14 @@ class Header extends Component {
   // window.location.reload();
   };
 
+  logOut = () => {
+    localStorage.setItem("success", 0);
+      this.setState({
+        login: false
+      });
+      window.location.reload();
+  };
+
   render() {
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
@@ -75,7 +83,7 @@ class Header extends Component {
                   <li>Profil</li>
                   <li>Ustawienia</li>
                   <li>Moje zbiórki</li>
-                  <li>Wyloguj</li>
+                  <li onClick={this.logOut}>Wyloguj</li>
                 </ul>
               </i>
             </span>

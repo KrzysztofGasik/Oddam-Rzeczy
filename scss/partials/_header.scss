@@ -37,6 +37,11 @@ header {
         padding: 10px 15px;
         font-size: 1rem;
       }
+      li:hover {
+        cursor: pointer;
+        color: #fff;
+        background: #f4cb0f;
+      }
     }
     .fa-cog:hover{
       ul {
