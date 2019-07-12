@@ -32,6 +32,7 @@ class Login extends Component {
     const PasswordType = this.state.password;
     console.log(EmailStore,EmailType,PasswordStore,PasswordType);
     if ((EmailStore == EmailType) && (PasswordStore == PasswordType)) {
+      localStorage.setItem("success", 1);
       this.setState({
         log: log,
         login: true
