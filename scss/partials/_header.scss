@@ -25,7 +25,12 @@ header {
       position: relative;
       margin-left: 5px;
     }
-    ul {
+    .fa-cog:hover {
+      animation: rotCircle 2s linear infinite;
+      cursor: pointer;
+      color: #f4cb0f;
+    }
+    .login__dropdown {
       list-style: none;
       position: absolute;
       border: 2px solid #000;
@@ -40,7 +45,7 @@ header {
         color: #fff;
         background: #f4cb0f;
       }
-      li:last-child:hover{
+      li:last-child:hover {
         cursor: pointer;
       }
     }
@@ -113,10 +118,19 @@ header {
 }
 
 @keyframes showNav {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes rotCircle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -82,19 +82,18 @@ class Header extends Component {
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
         {this.props.user ? (
-          <div className="login__buttons" style={{ marginRight: "90px" }}>
+          <div className="login__buttons">
             <span>
               Witaj {this.state.username}
-              <i className="fas fa-cog" onClick={this.showNav}>
+              <i className="fas fa-cog" onClick={this.showNav}></i>
                 {this.state.nav ? 
-                <ul>
+                <ul className="login__dropdown">
                   <li>Profil</li>
                   <li>Ustawienia</li>
                   <li>Moje zbiórki</li>
                   <li onClick={this.logOut}>Wyloguj</li>
                 </ul>
                 : null}
-              </i>
             </span>
           </div>
         ) : (
