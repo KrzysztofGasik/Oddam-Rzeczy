@@ -36,7 +36,8 @@ class Header extends Component {
     this.state = {
       showLoginPanel: false,
       username: localStorage.getItem("login"),
-      log: 0
+      log: 0,
+      nav: false
     };
   }
 
@@ -71,6 +72,12 @@ class Header extends Component {
       window.location.reload();
   };
 
+  showNav = () => {
+      this.setState({
+        nav: !this.state.nav
+      });
+  };
+
   render() {
     return (
       <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
@@ -78,13 +85,15 @@ class Header extends Component {
           <div className="login__buttons" style={{ marginRight: "90px" }}>
             <span>
               Witaj {this.state.username}
-              <i className="fas fa-cog">
+              <i className="fas fa-cog" onClick={this.showNav}>
+                {this.state.nav ? 
                 <ul>
                   <li>Profil</li>
                   <li>Ustawienia</li>
                   <li>Moje zbiórki</li>
                   <li onClick={this.logOut}>Wyloguj</li>
                 </ul>
+                : null}
               </i>
             </span>
           </div>

@@ -28,28 +28,21 @@ header {
     ul {
       list-style: none;
       position: absolute;
-      border: 1px solid #000;
-      opacity: 0;
-      transition: all 0.5s ease;
-      visibility: hidden;
+      border: 2px solid #000;
+      border-radius: 3px;
+      animation: showNav 0.5s ease-in-out;
       background: #fff;
       li {
         padding: 10px 15px;
         font-size: 1rem;
       }
       li:hover {
-        cursor: pointer;
         color: #fff;
         background: #f4cb0f;
       }
-    }
-    .fa-cog:hover{
-      ul {
-        visibility: visible;
-        opacity: 1;
-        display: block;
+      li:last-child:hover{
+        cursor: pointer;
       }
-      
     }
   }
 
@@ -116,5 +109,14 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes showNav {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
