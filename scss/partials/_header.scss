@@ -57,7 +57,7 @@ header {
       display: inline-block;
       padding: 10px;
       border: 1px solid rgba(0, 0, 0, 0);
-      background: #fff;
+      background: transparent;
       transition: border-color 0.2s ease-in-out;
     }
     a:hover {
@@ -82,7 +82,7 @@ header {
       margin: $default-margin;
       button {
         border: 1px solid rgba(0, 0, 0, 1);
-        background: #fff;
+        background: transparent;
         margin-left: 10px;
         font-size: 1em;
         width: 200px;

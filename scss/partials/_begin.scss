@@ -88,11 +88,14 @@
   form {
     display: flex;
     flex-direction: column;
-    margin: 25px 0 25px 10% ;
-    input {
+    margin: 25px 0 25px 10%;
+    input[type="checkbox"] {
       margin: 25px 10px 25px 0;
       width: 35px;
       height: 35px;
+    }
+    input[type="text"] {
+      width: 200px;
     }
     label {
       font-size: 1.5em;
@@ -111,7 +114,7 @@
   .begin__wrapper__button {
     display: block;
     padding: 10px;
-   #next {
+    #next {
       margin-left: 25px;
     }
   }
@@ -125,7 +128,7 @@
     margin: $default-margin;
     font-size: 24px;
   }
-  input[type='search'] {
+  input[type="search"] {
     width: 500px;
     padding: 40px;
     font-size: 1em;
@@ -138,12 +141,35 @@
     label {
       padding: 0 15px;
     }
-    
   }
   .hr__custom {
     width: 50%;
   }
-  
+  .begin__wrapper__forms {
+    display: flex;
+    flex-flow: row wrap;
+    .begin__wrapper__address {
+      display: flex;
+      flex-flow: column wrap;
+      span {
+        font-weight: 900;
+      }
+      label {
+        font-size: 1em;
+        display: flex;
+        flex-flow: column wrap;
+        input {
+          padding: 10px;
+        }
+        #uwagi {
+          padding: 40px 10px;
+        }
+      }
+    }
+    .begin__wrapper__address:last-child{
+      margin-left:50px;
+    }
+  }
 }
 
 .fa-hands,
@@ -154,7 +180,7 @@
   color: #b6b6b6;
 }
 
-input[type=checkbox]:checked + label {
+input[type="checkbox"]:checked + label {
   color: #fff;
   background: #f4cb0f;
   border: 1px solid #f4cb0f;
