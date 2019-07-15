@@ -11,7 +11,7 @@ class Form5 extends Component {
     return [
       <InfoBarAfterStep5 key={"InfoBarAfterStep5"} />,
       <Wrapper key={"Wrapper"}>
-        <form id="step5">
+        <form id="step5" key={'form5'}>
           <span>Krok 4/4</span>
           <h1>Podaj adres oraz termin odbioru rzeczy przez kuriera</h1>
           <p />

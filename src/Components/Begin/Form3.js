@@ -15,11 +15,15 @@ class Form3 extends Component {
     return [
       <InfoBarAfterStep3 key={"InfoBarAfterStep3"} />,
       <Wrapper key={"Wrapper"}>
-        <form id="step3">
+        <form id="step3" key={"form3"}>
           <span>Krok 3/4</span>
           <h1>Lokalizacja</h1>
           <label>
-            <select id="woj" onChange={this.handleOnChange}>
+            <select
+              id="woj"
+              onChange={this.handleOnChange("wojewodztwo")}
+              name="wojewodztwo"
+            >
               <option defaultValue="wybierz">-wybierz-</option>
               <option value="dolnośląskie">dolnośląskie</option>
               <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
@@ -40,55 +44,55 @@ class Form3 extends Component {
             </select>
           </label>
           <h3>Komu chcesz pomóc?</h3>
-          <div className="begin__wrapper_options">
-            <input
-              type="checkbox"
-              name="dzieciom"
-              onChange={this.handleOnChangeCheck("dzieciom")}
-            />
-            <label for="dzieciom">
-              dzieciom
+          <div className="begin__wrapper__step3">
+            <label>
+              <input
+                type="checkbox"
+                name="dzieciom"
+                onChange={this.handleOnChangeCheck("dzieciom")}
+              />
+              <span>dzieciom</span>
             </label>
-            <input
-              type="checkbox"
-              name="samotnymMatkom"
-              onChange={this.handleOnChangeCheck("samotnymMatkom")}
-            />
-            <label for="samotnymMatkom">
-              samotnym matkom
+            <label>
+              <input
+                type="checkbox"
+                name="samotnymMatkom"
+                onChange={this.handleOnChangeCheck("samotnymMatkom")}
+              />
+             <span>samotnym matkom</span>
             </label>
-            <input
-              type="checkbox"
-              name="bezdomnym"
-              onChange={this.handleOnChangeCheck("bezdomnym")}
-            />
-            <label for="bezdomnym">
-              bezdomnym
+            <label>
+              <input
+                type="checkbox"
+                name="bezdomnym"
+                onChange={this.handleOnChangeCheck("bezdomnym")}
+              />
+              <span>bezdomnym</span>
             </label>
-            <input
-              type="checkbox"
-              name="niepełnosprawnym"
-              onChange={this.handleOnChangeCheck("niepełnosprawnym")}
-            />
-            <label for="bezdomnym">
-              niepełnosprawnym
+            <label>
+              <input
+                type="checkbox"
+                name="niepełnosprawnym"
+                onChange={this.handleOnChangeCheck("niepełnosprawnym")}
+              />
+              <span>niepełnosprawnym</span>
             </label>
-            <input
-              type="checkbox"
-              name="osobomStarszym"
-              onChange={this.handleOnChangeCheck("osobomStarszym")}
-            />
-            <label for="osobomStarszym">
-              osobom starszym
+            <label>
+              <input
+                type="checkbox"
+                name="osobomStarszym"
+                onChange={this.handleOnChangeCheck("osobomStarszym")}
+              />
+             <span> osobom starszym</span>
             </label>
           </div>
           <label id="searchBar">
             Wpisz nazwę konkretnej organizacji (opcjonalnie)
             <input
-              type="search"
-              name="searchOrg"
-              onChange={this.handleOnChange("searchOrg")}
-            />
+            type="search"
+            name="searchOrg"
+            onChange={this.handleOnChange("searchOrg")}
+          />
           </label>
           <div className="begin__wrapper__button">
             <button id="back" onClick={() => this.props.step(2)}>

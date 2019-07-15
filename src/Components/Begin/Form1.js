@@ -8,6 +8,7 @@ class Form1 extends Component {
   };
 
   render() {
+
     return [
       <InfoBarAfterStep1 key={'InfoBarAfterStep1'}/>,
       <Wrapper key={'Wrapper'}>
@@ -20,7 +21,7 @@ class Form1 extends Component {
             name="ubrania"
             onChange={this.handleOnChange("ubrania")}
           />
-          ubrania, które nadają się do ponownego użycia
+          <span>ubrania, które nadają się do ponownego użycia</span>
         </label>
         <label>
           <input
@@ -28,7 +29,7 @@ class Form1 extends Component {
             name="ubrania2"
             onChange={this.handleOnChange("ubrania2")}
           />
-          ubrania, do wyrzucenia
+          <span>ubrania, do wyrzucenia</span>
         </label>
         <label>
           <input
@@ -36,7 +37,7 @@ class Form1 extends Component {
             name="zabawki"
             onChange={this.handleOnChange("zabawki")}
           />
-          zabawki
+          <span>zabawki</span>
         </label>
         <label>
           <input
@@ -44,7 +45,7 @@ class Form1 extends Component {
             name="ksiazki"
             onChange={this.handleOnChange("ksiazki")}
           />
-          książki
+          <span>książki</span>
         </label>
         <label>
           <input
@@ -52,10 +53,9 @@ class Form1 extends Component {
             name="inne"
             onChange={this.handleOnChange("inne")}
           />
-          inne
+          <span>inne</span>
         </label>
         <button id="next" onClick={()=> this.props.step(2)}>Dalej</button>
-        {/* <input type="submit" id="next" value="Dalej" ></input>  Na koniec formularza*/}
       </form>
       </Wrapper>
     ];

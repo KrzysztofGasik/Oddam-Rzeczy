@@ -4,7 +4,7 @@ import { Wrapper } from "../Begin/Wrapper";
 import { Fundations } from "../LandingPage/Funds/Fundations";
 
 class Form4 extends Component {
-  handleOnChangeCheck = name => event => {
+  handleOnChange = name => event => {
     this.props.onSave(name, event.target.checked);
   };
 
@@ -12,7 +12,7 @@ class Form4 extends Component {
     return [
       <InfoBarAfterStep4 key={"InfoBarAfterStep4"} />,
       <Wrapper key={"Wrapper"}>
-        <form id="step4">
+        <form id="step4" key={'form4'}>
           <span>Krok 3/4</span>
           <h1>Wybierz organizację, której chcesz pomóc</h1>
           <p />
@@ -23,7 +23,7 @@ class Form4 extends Component {
                   <input
                     type="checkbox"
                     name={val.name}
-                    onChange={this.handleOnChangeCheck(val.name)}
+                    onChange={this.handleOnChange(val.name)}
                   />
                   <label>
                     <h3>{val.name}</h3>
@@ -34,7 +34,6 @@ class Form4 extends Component {
               </Fragment>
             );
           })}
-
           <div className="begin__wrapper__button">
             <button id="back" onClick={() => this.props.step(3)}>
               Wstecz

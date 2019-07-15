@@ -4,6 +4,8 @@ import { Form2 } from "./Form2";
 import { Form3 } from "./Form3";
 import { Form4 } from "./Form4";
 import { Form5 } from "./Form5";
+import { SumUp } from "./SumUp";
+import {Wrapper} from "../Begin/Wrapper";
 
 class Master extends Component {
   constructor(props) {
@@ -30,11 +32,12 @@ class Master extends Component {
 
   handleOnSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
+    console.log(this.state);
     //   fetch(-- tu this.state.inputs)
   };
 
   render() {
+    // console.log(this.state.inputs);
     switch (this.state.step) {
       case 1:
         return (
@@ -71,9 +74,15 @@ class Master extends Component {
             step={step => this.updateStep(step)}
           />
         );
+      case 6:
+          console.log(this.state.inputs);
+        return (
+          <SumUp
+            onSubmit={this.handleOnSubmit}
+            step={step => this.updateStep(step)}
+          />
+        );
     }
-
-    //onSubmit={this.handleOnSubmit}
   }
 }
 
