@@ -11,10 +11,10 @@ class Form2 extends Component {
     return [
       <InfoBarAfterStep2 key={'InfoBarAfterStep2'} />,
       <Wrapper key={'Wrapper'}>
-      <form id="step2" >
+      <form id="step2" key={'form2'}>
         <span>Krok 2/4</span>
         <label>Podaj liczbę 60l worków, w które zostaną spakowane rzeczy:
-        <select id="bags" onChange={this.handleOnChange}>
+        <select id="bags" onChange={this.handleOnChange("worki")} name="worki">
           <option defaultValue="wybierz">-wybierz-</option>
           <option value="1">1</option>
           <option value="2">2</option>
