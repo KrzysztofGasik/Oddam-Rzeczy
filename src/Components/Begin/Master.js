@@ -75,11 +75,11 @@ class Master extends Component {
           />
         );
       case 6:
-          console.log(this.state.inputs);
         return (
           <SumUp
             onSubmit={this.handleOnSubmit}
             step={step => this.updateStep(step)}
+            worki={this.state.inputs.worki}
           />
         );
     }
