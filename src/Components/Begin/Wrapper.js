@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import bear from "../../../img/barrett-ward.jpg";
 
 const BgAfterLog = {
-    backgroundImage: "url('../img/barrett-ward.jpg')",
+    backgroundImage: `url(${bear})`,
     backgroundSize: "cover",
     backgroundPosition: "right bottom",
     backgroundRepeat: 'no-repeat',

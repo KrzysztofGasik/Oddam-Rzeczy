@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import decoration from "../../../img/decoration.png";
 
 class Login extends Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class Login extends Component {
           <section className="login__curtain">
             <div className="login__wrapper">
               <p>Zaloguj się</p>
-              <img src="../img/decoration.png" />
+              <img src={decoration} />
               <div className="login__form">
                 <input
                   type="email"

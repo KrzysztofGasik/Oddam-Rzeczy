@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Wrapper } from "../Begin/Wrapper";
 import { Thanks } from "./Thanks";
+import bag from "../../../img/icon_bag.png";
+import fundation from "../../../img/icon_fundation.png";
 
 class SumUp extends Component {
   constructor(props) {
@@ -79,7 +81,7 @@ class SumUp extends Component {
           <form id="sumup">
             <h1>Podsumowanie Twojej darowizny</h1>
             <div className="begin__wrapper__forms">
-              <img src="../img/icon_bag.png" />
+              <img src={bag} />
               <span>
                 {worki} {workiText} {(ubrania || ubrania2) && "ubrań "}
                 {zabawki && "zabawek "}
@@ -94,7 +96,7 @@ class SumUp extends Component {
               </span>
             </div>
             <div className="begin__wrapper__forms">
-              <img src="../img/icon_fundation.png" />
+              <img src={fundation} />
               <span>&#160;dla&#160;{fundacjaText}</span>
             </div>
             <div className="begin__wrapper__forms">

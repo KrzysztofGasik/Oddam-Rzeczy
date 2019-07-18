@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Register } from "../Register/Register";
 import { Login } from "../Login/Login";
+import decoration from "../../../img/decoration.png";
+import headerStart from "../../../img/header_start_img.jpg";
+import headerLog from "../../../img/header_logged_img.jpg";
 
 const BgBeforeLog = {
-  backgroundImage: "url('../img/header_start_img.jpg')"
+  backgroundImage: `url('${headerStart}')`
 };
 
 const BgAfterLog = {
-  backgroundImage: "url('../img/header_logged_img.jpg')"
+  backgroundImage: `url('${headerLog}')`
 };
 
 const Steps = [
@@ -140,7 +143,7 @@ class Header extends Component {
         {this.props.user ? (
           <div className="header__wrapper">
             <p>Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</p>
-            <img src="../img/decoration.png" />
+            <img src={decoration} />
             <p>Wystarczą 4 proste kroki</p>
             <div className="header__step__wrapper">
               {Steps.map((val, index) => {
@@ -159,7 +162,7 @@ class Header extends Component {
           <div className="header__wrapper">
             <p>Zacznij pomagać!</p>
             <p>Oddaj niechciane rzeczy w zaufane ręce</p>
-            <img src="../img/decoration.png" />
+            <img src={decoration} />
             <div className="header__buttons">
               <button onClick={this.ShowLoginPanel}>ODDAJ RZECZY</button>
               <button onClick={this.ShowLoginPanel}>ZORGANIZUJ ZBIÓRKĘ</button>

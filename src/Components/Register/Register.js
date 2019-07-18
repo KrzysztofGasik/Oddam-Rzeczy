@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import decoration from "../../../img/decoration.png";
 
 class Register extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Register extends Component {
           <section className="register__curtain">
             <div className="register__wrapper">
               <p>Załóż konto</p>
-              <img src="../img/decoration.png" />
+              <img src={decoration} />
               <div className="register__form">
                 <input
                   type="email"

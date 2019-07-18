@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Master } from "./Master";
 import { InfoBarBeforeLog } from "../InfoBar/InfoBarBefore";
 import { Register } from "../Register/Register";
+import decoration from "../../../img/decoration.png";
 
 const BeginContent = [
   {
@@ -31,7 +32,7 @@ const BeginBeforeLog = () => {
     <InfoBarBeforeLog key="InfoBarBeforeLog" />,
     <section className="begin__wrapper" id="Begin" key="BeginBeforeLog">
       <span className="begin__title">Wystarczą 4 proste kroki</span>
-      <img src="../img/decoration.png" />
+      <img src={decoration} />
       <div className="begin__info">
         {BeginContent.map(val => {
           return (
@@ -86,7 +87,7 @@ class Begin extends Component {
             <InfoBarBeforeLog key="InfoBarBeforeLog" />,
             <section className="begin__wrapper" id="Begin" key="BeginBeforeLog">
               <span className="begin__title">Wystarczą 4 proste kroki</span>
-              <img src="../img/decoration.png" />
+              <img src={decoration} />
               <div className="begin__info">
                 {BeginContent.map(val => {
                   return (
