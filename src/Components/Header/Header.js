@@ -61,21 +61,21 @@ class Header extends Component {
       log: log,
       showLoginPanel: false
     });
-  // window.location.reload();
+    // window.location.reload();
   };
 
   logOut = () => {
     localStorage.setItem("success", 0);
-      this.setState({
-        login: false
-      });
-      window.location.reload();
+    this.setState({
+      login: false
+    });
+    window.location.reload();
   };
 
   showNav = () => {
-      this.setState({
-        nav: !this.state.nav
-      });
+    this.setState({
+      nav: !this.state.nav
+    });
   };
 
   render() {
@@ -85,15 +85,15 @@ class Header extends Component {
           <div className="login__buttons">
             <span>
               Witaj {this.state.username}
-              <i className="fas fa-cog" onClick={this.showNav}></i>
-                {this.state.nav ? 
+              <i className="fas fa-cog" onClick={this.showNav} />
+              {this.state.nav ? (
                 <ul className="login__dropdown">
                   <li>Profil</li>
                   <li>Ustawienia</li>
                   <li>Moje zbiórki</li>
                   <li onClick={this.logOut}>Wyloguj</li>
                 </ul>
-                : null}
+              ) : null}
             </span>
           </div>
         ) : (

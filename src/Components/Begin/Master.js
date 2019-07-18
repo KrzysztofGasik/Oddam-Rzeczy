@@ -5,7 +5,6 @@ import { Form3 } from "./Form3";
 import { Form4 } from "./Form4";
 import { Form5 } from "./Form5";
 import { SumUp } from "./SumUp";
-import {Wrapper} from "../Begin/Wrapper";
 
 class Master extends Component {
   constructor(props) {
@@ -30,14 +29,7 @@ class Master extends Component {
     });
   };
 
-  handleOnSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-    //   fetch(-- tu this.state.inputs)
-  };
-
   render() {
-    // console.log(this.state.inputs);
     switch (this.state.step) {
       case 1:
         return (
@@ -77,9 +69,28 @@ class Master extends Component {
       case 6:
         return (
           <SumUp
-            onSubmit={this.handleOnSubmit}
             step={step => this.updateStep(step)}
+            ubrania={this.state.inputs.ubrania}
+            ubrania2={this.state.inputs.ubrania2}
+            zabawki={this.state.inputs.zabawki}
+            ksiazki={this.state.inputs.ksiazki}
+            inne={this.state.inputs.inne}
             worki={this.state.inputs.worki}
+            dzieciom={this.state.inputs.dzieciom}
+            samotnymMatkom={this.state.inputs.samotnymMatkom}
+            bezdomnym={this.state.inputs.bezdomnym}
+            niepelnosprawnym={this.state.inputs.niepelnosprawnym}
+            osobomStarszym={this.state.inputs.osobomStarszym}
+            DbamOZdrowie={this.state.inputs.DbamOZdrowie}
+            DlaDzieci={this.state.inputs.DlaDzieci}
+            BezDomu={this.state.inputs.BezDomu}
+            ulica={this.state.inputs.ulica} 
+            miasto={this.state.inputs.miasto}
+            kod={this.state.inputs.kod}
+            telefon={this.state.inputs.telefon} 
+            data={this.state.inputs.data}
+            godzina={this.state.inputs.godzina}
+            uwagi={this.state.inputs.uwagi} 
           />
         );
     }
