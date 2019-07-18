@@ -82,6 +82,20 @@
     cursor: pointer;
     background: #fff;
   }
+  input#next {
+    border: 1px solid black;
+    background: transparent;
+    margin: $default-margin;
+    font-size: 1em;
+    width: 250px;
+    padding: 25px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  input#next:hover {
+    cursor: pointer;
+    background: #fff;
+  }
   span {
     margin: $default-margin;
   }
@@ -191,6 +205,21 @@
     }
     .begin__wrapper__address:last-child {
       margin-left: 50px;
+    }
+  }
+  .begin__screen_thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto auto;
+    max-width: 300px;
+    p {
+      text-align: center;
+      font-size: 1.5em;
+      margin: $default-margin;
+    }
+    img {
+      margin: $default-margin;
     }
   }
 }
