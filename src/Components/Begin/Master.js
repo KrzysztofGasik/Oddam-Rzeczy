@@ -75,11 +75,32 @@ class Master extends Component {
           />
         );
       case 6:
+        console.log(this.state.inputs.fundacja);
         return (
           <SumUp
             onSubmit={this.handleOnSubmit}
             step={step => this.updateStep(step)}
+            ubrania={this.state.inputs.ubrania}
+            ubrania2={this.state.inputs.ubrania2}
+            zabawki={this.state.inputs.zabawki}
+            ksiazki={this.state.inputs.ksiazki}
+            inne={this.state.inputs.inne}
             worki={this.state.inputs.worki}
+            dzieciom={this.state.inputs.dzieciom}
+            samotnymMatkom={this.state.inputs.samotnymMatkom}
+            bezdomnym={this.state.inputs.bezdomnym}
+            niepelnosprawnym={this.state.inputs.niepelnosprawnym}
+            osobomStarszym={this.state.inputs.osobomStarszym}
+            DbamOZdrowie={this.state.inputs.DbamOZdrowie}
+            DlaDzieci={this.state.inputs.DlaDzieci}
+            BezDomu={this.state.inputs.BezDomu}
+            ulica={this.state.inputs.ulica} 
+            miasto={this.state.inputs.miasto}
+            kod={this.state.inputs.kod}
+            telefon={this.state.inputs.telefon} 
+            data={this.state.inputs.data}
+            godzina={this.state.inputs.godzina}
+            uwagi={this.state.inputs.uwagi} 
           />
         );
     }

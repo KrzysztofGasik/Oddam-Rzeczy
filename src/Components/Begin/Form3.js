@@ -72,7 +72,7 @@ class Form3 extends Component {
             <label>
               <input
                 type="checkbox"
-                name="niepełnosprawnym"
+                name="niepelnosprawnym"
                 onChange={this.handleOnChangeCheck("niepełnosprawnym")}
               />
               <span>niepełnosprawnym</span>

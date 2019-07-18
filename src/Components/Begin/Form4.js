@@ -4,9 +4,23 @@ import { Wrapper } from "../Begin/Wrapper";
 import { Fundations } from "../LandingPage/Funds/Fundations";
 
 class Form4 extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      disabled: false
+    };
+  }
+  
   handleOnChange = name => event => {
     this.props.onSave(name, event.target.checked);
   };
+
+  Selected = () => {
+    this.setState({
+      disabled: !this.state.disabled
+    })
+  }
 
   render() {
     return [
@@ -22,8 +36,10 @@ class Form4 extends Component {
                 <div className="begin__wrapper_options" >
                   <input
                     type="checkbox"
-                    name={val.name}
-                    onChange={this.handleOnChange(val.name)}
+                    name={val.name2}
+                    onChange={this.handleOnChange(val.name2)}
+                    onClick={this.Selected}
+                    disabled={this.state.disabled}
                   />
                   <label>
                     <h3>{val.name}</h3>
