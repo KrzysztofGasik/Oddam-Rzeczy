@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
 import { Fundations } from "./Fundations";
 import { Organizations } from "./Organizations";
 import { LocalFunds } from "./LocalFunds";
+import decoration from "../../../../img/decoration.png";
 
 class Funds extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Funds extends Component {
     return (
       <section id="Funds">
         <span>Komu pomagamy?</span>
-        <img src="../img/decoration.png" />
+        <img src={decoration} />
         <div className="funds__buttons">
           <button onClick={() => this.changeFund(Fundations)}>Fundacjom</button>
           <button onClick={() => this.changeFund(Organizations)}>

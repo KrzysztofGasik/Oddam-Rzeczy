@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import decoration from "../../../img/decoration.png";
+import instagram from "../../../img/insta.png";
+import facebook from "../../../img/fb.png";
 
 class Footer extends Component {
   constructor(props) {
@@ -68,7 +71,7 @@ class Footer extends Component {
       <footer id="Footer">
         <div className="footer__wrapper">
           <span>Skontaktuj się z nami</span>
-          <img src="../img/decoration.png" />
+          <img src={decoration} />
           <div className="contact__form">
             <span>Formularz kontaktowy</span>
             <div>
@@ -105,10 +108,10 @@ class Footer extends Component {
         </div>
         <div className="footer__social">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="../img/fb.png" />
+            <img src={facebook} />
           </a>
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="../img/insta.png" />
+            <img src={instagram} />
           </a>
         </div>
       </footer>

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import decoration from "../../../img/decoration.png";
 
 export const Thanks = () => {
   return (
@@ -7,7 +8,7 @@ export const Thanks = () => {
         Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie
         informacje o odbiorze
       </p>
-      <img src="../img/decoration.png" />
+      <img src={decoration} />
     </div>
   );
 };
