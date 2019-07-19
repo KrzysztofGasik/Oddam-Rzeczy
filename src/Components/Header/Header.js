@@ -3,16 +3,16 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { Register } from "../Register/Register";
 import { Login } from "../Login/Login";
 import decoration from "../../../img/decoration.png";
-import headerStart from "../../../img/header_start_img.jpg";
-import headerLog from "../../../img/header_logged_img.jpg";
+// import headerStart from "../../../img/header_start_img.jpg";
+// import headerLog from "../../../img/header_logged_img.jpg";
 
-const BgBeforeLog = {
-  backgroundImage: `url('${headerStart}')`
-};
+// const BgBeforeLog = {
+//   backgroundImage: `url('${headerStart}')`
+// };
 
-const BgAfterLog = {
-  backgroundImage: `url('${headerLog}')`
-};
+// const BgAfterLog = {
+//   backgroundImage: `url('${headerLog}')`
+// };
 
 const Steps = [
   {
@@ -64,7 +64,6 @@ class Header extends Component {
       log: log,
       showLoginPanel: false
     });
-    // window.location.reload();
   };
 
   logOut = () => {
@@ -83,7 +82,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header style={this.props.user ? BgAfterLog : BgBeforeLog}>
+      <header className={this.props.user ? "header__bg__after" : "header__bg__before"}>
         {this.props.user ? (
           <div className="login__buttons">
             <span>

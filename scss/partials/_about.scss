@@ -1,5 +1,6 @@
 .about__wrapper {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -10,6 +11,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 40%;
     span,
     p {
       padding: 10px 0;
@@ -22,7 +24,8 @@
 
   .about__img {
     img {
-      padding: 20px 0;
+      max-width: 100%;
+      height: auto;
     }
   }
 }
