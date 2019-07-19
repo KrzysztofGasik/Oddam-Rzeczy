@@ -71,10 +71,25 @@ class Master extends Component {
           <SumUp
             step={step => this.updateStep(step)}
             ubrania={this.state.inputs.ubrania}
+            meskie={this.state.inputs.meskie}
+            damskie={this.state.inputs.damskie}
+            chlopiec={this.state.inputs.chlopiec}
+            dziewczynka={this.state.inputs.dziewczynka}
+            jesien={this.state.inputs.jesien}
+            wiosna={this.state.inputs.wiosna}
             ubrania2={this.state.inputs.ubrania2}
             zabawki={this.state.inputs.zabawki}
+            chlopiecZabawki={this.state.inputs.chlopiecZabawki}
+            dziewczynkaZabawki={this.state.inputs.dziewczynkaZabawki}
+            chlopiecWiek={this.state.inputs.chlopiecWiek}
+            dziewczynkaWiek={this.state.inputs.dziewczynkaWiek}
             ksiazki={this.state.inputs.ksiazki}
+            ksiazkaDorosli={this.state.inputs.ksiazkaDorosli}
+            ksiazkaDzieci={this.state.inputs.ksiazkaDzieci}
+            ksiazkaMlodziez={this.state.inputs.ksiazkaMlodziez}
+            ksiazkaEdukacyjna={this.state.inputs.ksiazkaEdukacyjna}
             inne={this.state.inputs.inne}
+            inneJakie={this.state.inputs.inneJakie}
             worki={this.state.inputs.worki}
             dzieciom={this.state.inputs.dzieciom}
             samotnymMatkom={this.state.inputs.samotnymMatkom}

@@ -31,12 +31,10 @@ class SumUp extends Component {
   }
 
   render() {
-    const {
-      ubrania,
-      ubrania2,
-      zabawki,
-      ksiazki,
-      inne,
+    const {ubrania,meskie,damskie,chlopiec,dziewczynka,jesien,wiosna,ubrania2} = this.props;
+    const {zabawki,chlopiecZabawki,dziewczynkaZabawki,chlopiecWiek,dziewczynkaWiek} = this.props;
+    const {ksiazki,ksiazkaDorosli,ksiazkaDzieci,ksiazkaMlodziez,ksiazkaEdukacyjna,inne,inneJakie} = this.props;
+    const {  
       worki,
       dzieciom,
       samotnymMatkom,
@@ -60,7 +58,9 @@ class SumUp extends Component {
       workiText = "worek";
     } else if (worki > 1 && worki < 5) {
       workiText = "worki";
-    } else if (worki > 4) {
+    } else if (worki > 4 && worki <=10) {
+      workiText = "worków";
+    } else {
       workiText = "worków";
     }
 
@@ -83,16 +83,11 @@ class SumUp extends Component {
             <div className="begin__wrapper__forms">
               <img src={bag} />
               <span>
-                {worki} {workiText} {(ubrania || ubrania2) && "ubrań "}
-                {zabawki && "zabawek "}
-                {ksiazki && "książek "}
-                {inne && "innych rzeczy "}
-                &#160;dla&#160;
-                {dzieciom && "dzieci "}
-                {samotnymMatkom && "samotnych matek "}
-                {bezdomnym && "bezdomnych "}
-                {niepelnosprawnym && "niepełnosprawnych "}
-                {osobomStarszym && "osób starszych "}
+                {worki} {workiText} {ubrania && "ubrań "} {(ubrania && meskie) && "dla mężczyzn "} {(ubrania && damskie) && "dla kobiet "} {(ubrania && chlopiec) && "dla chłopców "} {(ubrania && dziewczynka) && "dla dziewczynek "} {(ubrania && jesien) && "na jesień/zimę "} {(ubrania && wiosna) && "na wiosnę/lato "} {ubrania2 && "ubrań do wyrzucenia"}
+                {zabawki && <br/>}{zabawki && "zabawek "} {(chlopiecZabawki && chlopiecWiek) && `dla chłopca w wieku ${chlopiecWiek}`} {(dziewczynkaZabawki && dziewczynkaWiek) && `dla dziewczynki w wieku ${dziewczynkaWiek}`}
+                {ksiazki && <br/>}{ksiazki && "książek "} {ksiazkaDorosli && "dla dorosłych "} {ksiazkaDzieci && "dla dzieci "} {ksiazkaMlodziez && "dla młodzieży "} {ksiazkaEdukacyjna && "edukacyjnych "}
+                {inne && <br/>}{inne && "innych rzeczy "} {inneJakie && `(${inneJakie})`}
+                &#160;dla&#160; {dzieciom && "dzieci "} {samotnymMatkom && "samotnych matek "} {bezdomnym && "bezdomnych "} {niepelnosprawnym && "niepełnosprawnych "} {osobomStarszym && "osób starszych "}
               </span>
             </div>
             <div className="begin__wrapper__forms">

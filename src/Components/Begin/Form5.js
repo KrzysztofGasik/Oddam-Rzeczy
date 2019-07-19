@@ -3,6 +3,19 @@ import { InfoBarAfterStep5 } from "../InfoBar/InfoBarAfterStep5";
 import { Wrapper } from "../Begin/Wrapper";
 
 class Form5 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkArray: []
+    };
+  }
+
+  handleOnClick = name => {
+    this.setState({
+      checkArray: [...this.state.checkArray, name]
+    });
+  };
+
   handleOnChange = name => event => {
     this.props.onSave(name, event.target.value);
   };
@@ -11,7 +24,7 @@ class Form5 extends Component {
     return [
       <InfoBarAfterStep5 key={"InfoBarAfterStep5"} />,
       <Wrapper key={"Wrapper"}>
-        <form id="step5" key={'form5'}>
+        <form id="step5" key={"form5"}>
           <span>Krok 4/4</span>
           <h1>Podaj adres oraz termin odbioru rzeczy przez kuriera</h1>
           <p />
@@ -24,6 +37,7 @@ class Form5 extends Component {
                   type="text"
                   name="ulica"
                   onChange={this.handleOnChange("ulica")}
+                  onClick={() => this.handleOnClick("ulica")}
                 />
               </label>
               <label>
@@ -32,6 +46,7 @@ class Form5 extends Component {
                   type="text"
                   name="miasto"
                   onChange={this.handleOnChange("miasto")}
+                  onClick={() => this.handleOnClick("miasto")}
                 />
               </label>
               <label>
@@ -40,6 +55,7 @@ class Form5 extends Component {
                   type="text"
                   name="kod"
                   onChange={this.handleOnChange("kod")}
+                  onClick={() => this.handleOnClick("kod")}
                 />
               </label>
               <label>
@@ -48,6 +64,7 @@ class Form5 extends Component {
                   type="text"
                   name="telefon"
                   onChange={this.handleOnChange("telefon")}
+                  onClick={() => this.handleOnClick("telefon")}
                 />
               </label>
             </div>
@@ -59,6 +76,7 @@ class Form5 extends Component {
                   type="text"
                   name="data"
                   onChange={this.handleOnChange("data")}
+                  onClick={() => this.handleOnClick("data")}
                 />
               </label>
               <label>
@@ -67,6 +85,7 @@ class Form5 extends Component {
                   type="text"
                   name="godzina"
                   onChange={this.handleOnChange("godzina")}
+                  onClick={() => this.handleOnClick("godzina")}
                 />
               </label>
               <label>
@@ -76,6 +95,7 @@ class Form5 extends Component {
                   name="uwagi"
                   id="uwagi"
                   onChange={this.handleOnChange("uwagi")}
+                  onClick={() => this.handleOnClick("uwagi")}
                 />
               </label>
             </div>
@@ -84,7 +104,11 @@ class Form5 extends Component {
             <button id="back" onClick={() => this.props.step(4)}>
               Wstecz
             </button>
-            <button id="next" onClick={() => this.props.step(6)}>
+            <button
+              id="next"
+              disabled={this.state.checkArray.length > 7 ? false : true}
+              onClick={() => this.props.step(6)}
+            >
               Dalej
             </button>
           </div>
