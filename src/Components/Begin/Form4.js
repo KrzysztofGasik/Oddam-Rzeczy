@@ -11,7 +11,7 @@ class Form4 extends Component {
       disabled: false
     };
   }
-  
+
   handleOnChange = name => event => {
     this.props.onSave(name, event.target.checked);
   };
@@ -54,7 +54,7 @@ class Form4 extends Component {
             <button id="back" onClick={() => this.props.step(3)}>
               Wstecz
             </button>
-            <button id="next" onClick={() => this.props.step(5)}>
+            <button id="next" disabled={this.state.disabled ? false : true } onClick={() => this.props.step(5)}>
               Dalej
             </button>
           </div>

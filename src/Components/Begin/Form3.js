@@ -3,6 +3,20 @@ import { InfoBarAfterStep3 } from "../InfoBar/InfoBarAfterStep3";
 import { Wrapper } from "../Begin/Wrapper";
 
 class Form3 extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkArray: []
+    };
+  }
+
+  handleOnClick = name => {
+    this.setState({
+      checkArray: name,
+    });
+  };
+
   handleOnChange = name => event => {
     this.props.onSave(name, event.target.value);
   };
@@ -50,6 +64,7 @@ class Form3 extends Component {
                 type="checkbox"
                 name="dzieciom"
                 onChange={this.handleOnChangeCheck("dzieciom")}
+                onClick={() => this.handleOnClick("dzieciom")}
               />
               <span>dzieciom</span>
             </label>
@@ -58,6 +73,7 @@ class Form3 extends Component {
                 type="checkbox"
                 name="samotnymMatkom"
                 onChange={this.handleOnChangeCheck("samotnymMatkom")}
+                onClick={() => this.handleOnClick("samotnymMatkom")}
               />
              <span>samotnym matkom</span>
             </label>
@@ -66,6 +82,7 @@ class Form3 extends Component {
                 type="checkbox"
                 name="bezdomnym"
                 onChange={this.handleOnChangeCheck("bezdomnym")}
+                onClick={() => this.handleOnClick("bezdomnym")}
               />
               <span>bezdomnym</span>
             </label>
@@ -74,6 +91,7 @@ class Form3 extends Component {
                 type="checkbox"
                 name="niepelnosprawnym"
                 onChange={this.handleOnChangeCheck("niepełnosprawnym")}
+                onClick={() => this.handleOnClick("niepełnosprawnym")}
               />
               <span>niepełnosprawnym</span>
             </label>
@@ -82,6 +100,7 @@ class Form3 extends Component {
                 type="checkbox"
                 name="osobomStarszym"
                 onChange={this.handleOnChangeCheck("osobomStarszym")}
+                onClick={() => this.handleOnClick("osobomStarszym")}
               />
              <span> osobom starszym</span>
             </label>
@@ -98,7 +117,7 @@ class Form3 extends Component {
             <button id="back" onClick={() => this.props.step(2)}>
               Wstecz
             </button>
-            <button id="next" onClick={() => this.props.step(4)}>
+            <button id="next" disabled={this.state.checkArray.length ? false : true } onClick={() => this.props.step(4)}>
               Szukaj
             </button>
           </div>

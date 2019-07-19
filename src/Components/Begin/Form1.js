@@ -34,7 +34,6 @@ class Form1 extends Component {
   };
 
   render() {
-    console.log(this.state.checkArray);
     return [
       <InfoBarAfterStep1 key={"InfoBarAfterStep1"} />,
       <Wrapper key={"Wrapper"}>
@@ -118,6 +117,7 @@ class Form1 extends Component {
               type="checkbox"
               name="ubrania2"
               onChange={this.handleOnChange("ubrania2")}
+              onClick={() => this.handleOnClick("ubrania2")}
             />
             <span>ubrania, do wyrzucenia</span>
           </label>
@@ -138,16 +138,16 @@ class Form1 extends Component {
                   <label>
                     <input
                       type="checkbox"
-                      name="chlopiec"
-                      onChange={this.handleOnChange("chlopiec")}
+                      name="chlopiecZabawki"
+                      onChange={this.handleOnChange("chlopiecZabawki")}
                     />
                     <span>Chłopiec</span>
                   </label>
                   <label>
                     <input
                       type="checkbox"
-                      name="dziewczynka"
-                      onChange={this.handleOnChange("dziewczynka")}
+                      name="dziewczynkaZabawki"
+                      onChange={this.handleOnChange("dziewczynkaZabawki")}
                     />
                     <span>Dziewczynka</span>
                   </label>
@@ -253,24 +253,24 @@ class Form1 extends Component {
           </label>
           {this.state.visible && this.state.checkArray.includes("inne") && (
             <>
-            <div className="begin__wrapper__step1">
-              <div>
-                <span>Wypisz jakie:</span>
-                <label>
-                  <input
-                    type="text"
-                    name="inneJakie"
-                    onChange={this.handleOnValue("inneJakie")}
-                  />
-                </label>
+              <div className="begin__wrapper__step1">
+                <div>
+                  <span>Wypisz jakie:</span>
+                  <label>
+                    <input
+                      type="text"
+                      name="inneJakie"
+                      onChange={this.handleOnValue("inneJakie")}
+                    />
+                  </label>
+                </div>
               </div>
-            </div>
-            <button id="ok" onClick={e => this.Close(e)}>
+              <button id="ok" onClick={e => this.Close(e)}>
                 OK
               </button>
             </>
           )}
-          <button id="next" onClick={() => this.props.step(2)}>
+          <button id="next" disabled={this.state.checkArray.length ? false : true } onClick={() => this.props.step(2)}>
             Dalej
           </button>
         </form>
