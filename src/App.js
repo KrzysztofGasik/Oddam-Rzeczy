@@ -5,7 +5,6 @@ import { Begin } from "./Components/Begin/Begin";
 import { LandingPage } from "./Components/LandingPage/LandingPage";
 import { Footer } from "./Components/Footer/Footer";
 import { animateScroll as scroll } from "react-scroll";
-import { BrowserRouter } from "react-router-dom";
 import "../scss/style.scss";
 
 class App extends Component {
@@ -33,15 +32,12 @@ class App extends Component {
   };
 
   render() {
-    // console.log(this.state.log);
     return (
-      <BrowserRouter>
+      <>
         <button className="scrollBottom" onClick={this.scrollToBottom}>
           <i className="fas fa-arrow-down" />
         </button>
-        <Header
-          user={this.state.logOn ? true : false}
-        />
+        <Header user={this.state.logOn ? true : false} />
         <Begin
           user={this.state.logOn ? true : false}
           updateStep={this.updateStep}
@@ -51,7 +47,7 @@ class App extends Component {
         <button className="scrollTop" onClick={this.scrollToTop}>
           <i className="fas fa-arrow-up" />
         </button>
-      </BrowserRouter>
+      </>
     );
   }
 }
