@@ -80,6 +80,10 @@ body {
       background: transparent;
     }
 
+    .about__wrapper {
+      flex-flow: row wrap;
+    }
+
     #Funds {
       .funds__list {
         justify-content: center;
@@ -130,6 +134,10 @@ body {
       background: transparent;
     }
 
+    .about__wrapper {
+      flex-flow: row wrap;
+    }
+
     #Funds {
       .funds__list {
         justify-content: center;
@@ -144,6 +152,7 @@ body {
         display: none;
       }
     }
+
   }
   @media (min-width: 900px) and (max-width: 1200px) {
     overflow-x: hidden;
