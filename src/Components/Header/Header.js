@@ -3,16 +3,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { Register } from "../Register/Register";
 import { Login } from "../Login/Login";
 import decoration from "../../../img/decoration.png";
-// import headerStart from "../../../img/header_start_img.jpg";
-// import headerLog from "../../../img/header_logged_img.jpg";
-
-// const BgBeforeLog = {
-//   backgroundImage: `url('${headerStart}')`
-// };
-
-// const BgAfterLog = {
-//   backgroundImage: `url('${headerLog}')`
-// };
 
 const Steps = [
   {
