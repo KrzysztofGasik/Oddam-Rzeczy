@@ -84,10 +84,10 @@ class Footer extends Component {
               />
               <input
                 type="email"
-                id="email"
+                id="emailForm"
                 placeholder="Email"
                 value={this.state.email}
-                onChange={e => this.changeForm(e, "email")}
+                onChange={e => this.changeForm(e, "emailForm")}
               />
             </div>
             <input

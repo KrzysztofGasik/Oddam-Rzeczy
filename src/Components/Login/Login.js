@@ -52,22 +52,22 @@ class Login extends Component {
             <div className="login__wrapper">
               <p>Zaloguj się</p>
               <img src={decoration} />
-              <div className="login__form">
+              <form className="login__form">
                 <input
                   type="email"
-                  id="email"
+                  id="emailLog"
                   placeholder="Email"
                   value={this.state.email}
-                  onChange={e => this.changeForm(e, "email")}
+                  onChange={e => this.changeForm(e, "emailLog")}
                 />
                 <input
                   type="password"
-                  id="password"
+                  id="passwordLog"
                   placeholder="Password"
                   value={this.state.password}
-                  onChange={e => this.changeForm(e, "password")}
+                  onChange={e => this.changeForm(e, "passwordLog")}
                 />
-              </div>
+              </form>
               <div className="login__buttons">
                 <button>Załóż konto</button>
                 <button onClick={(e)=>this.validLogIn(e,this.props.log(1))}>Zaloguj</button>

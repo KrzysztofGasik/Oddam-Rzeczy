@@ -45,29 +45,29 @@ class Register extends Component {
             <div className="register__wrapper">
               <p>Załóż konto</p>
               <img src={decoration} />
-              <div className="register__form">
+              <form className="register__form">
                 <input
                   type="email"
-                  id="email"
+                  id="emailReg"
                   placeholder="Email"
                   value={this.state.email}
-                  onChange={e => this.changeForm(e, "email")}
+                  onChange={e => this.changeForm(e, "emailReg")}
                 />
                 <input
                   type="password"
-                  id="password"
+                  id="passwordReg"
                   placeholder="Password"
                   value={this.state.password}
-                  onChange={e => this.changeForm(e, "password")}
+                  onChange={e => this.changeForm(e, "passwordReg")}
                 />
                 <input
                   type="password"
-                  id="password2"
+                  id="passwordReg2"
                   placeholder="Repeat password"
                   value={this.state.password2}
-                  onChange={e => this.changeForm(e, "password2")}
+                  onChange={e => this.changeForm(e, "passwordReg2")}
                 />
-              </div>
+              </form>
               <div className="register__buttons">
                 <button onClick={this.validLog}>Zaloguj</button>
                 <button onClick={(e)=>this.validRegistration(e,this.props.reg(1))}>Załóż konto</button>
