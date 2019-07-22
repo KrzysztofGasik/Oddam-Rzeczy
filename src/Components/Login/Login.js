@@ -5,8 +5,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
+      emailLog: "",
+      passwordLog: "",
       login: false
     };
   }
@@ -26,12 +26,11 @@ class Login extends Component {
   validLogIn = (e,log) => {
     e.preventDefault();
     const EmailStore= localStorage.getItem("login");
-    const Str = this.state.email;
+    const Str = this.state.emailLog;
     const NameReplace = Str.replace(/@.*$/, "");
     const EmailType = NameReplace !== Str ? NameReplace : null;
     const PasswordStore = localStorage.getItem("password");
-    const PasswordType = this.state.password;
-    console.log(EmailStore,EmailType,PasswordStore,PasswordType);
+    const PasswordType = this.state.passwordLog;
     if ((EmailStore == EmailType) && (PasswordStore == PasswordType)) {
       localStorage.setItem("success", 1);
       this.setState({
@@ -57,14 +56,14 @@ class Login extends Component {
                   type="email"
                   id="emailLog"
                   placeholder="Email"
-                  value={this.state.email}
+                  value={this.state.emailLog}
                   onChange={e => this.changeForm(e, "emailLog")}
                 />
                 <input
                   type="password"
                   id="passwordLog"
                   placeholder="Password"
-                  value={this.state.password}
+                  value={this.state.passwordLog}
                   onChange={e => this.changeForm(e, "passwordLog")}
                 />
               </form>

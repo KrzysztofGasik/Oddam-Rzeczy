@@ -5,9 +5,9 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      password2: "",
+      emailReg: "",
+      passwordReg: "",
+      passwordReg2: "",
       register: localStorage.getItem('login') != null ? true : false
     };
   }
@@ -20,20 +20,23 @@ class Register extends Component {
 
   validRegistration = (e,reg) => {
     e.preventDefault();
-    if (this.state.password === this.state.password2) {
-      const str = this.state.email;
+    if ((this.state.passwordReg == this.state.passwordReg2) && (this.state.passwordReg != "" && this.state.passwordReg2 != "")) {
+      const str = this.state.emailReg;
       const nameReplace = str.replace(/@.*$/, "");
       const name = nameReplace !== str ? nameReplace : null;
 
       localStorage.setItem("login", name);
-      localStorage.setItem("password", this.state.password);
+      localStorage.setItem("password", this.state.passwordReg);
 
       this.setState({
         reg: reg,
         register: true
       });
-    } else {
+    } else if (this.state.passwordReg != this.state.passwordReg2){
       alert('Hasła muszą być identyczne');
+    }
+     else if (this.state.emailReg == "") {
+      alert('Proszę wpisać adres email');
     }
   };
 
@@ -50,21 +53,21 @@ class Register extends Component {
                   type="email"
                   id="emailReg"
                   placeholder="Email"
-                  value={this.state.email}
+                  value={this.state.emailReg}
                   onChange={e => this.changeForm(e, "emailReg")}
                 />
                 <input
                   type="password"
                   id="passwordReg"
                   placeholder="Password"
-                  value={this.state.password}
+                  value={this.state.passwordReg}
                   onChange={e => this.changeForm(e, "passwordReg")}
                 />
                 <input
                   type="password"
                   id="passwordReg2"
                   placeholder="Repeat password"
-                  value={this.state.password2}
+                  value={this.state.passwordReg2}
                   onChange={e => this.changeForm(e, "passwordReg2")}
                 />
               </form>
