@@ -8,7 +8,7 @@ class Footer extends Component {
     super(props);
     this.state = {
       name: "",
-      email: "",
+      emailform: "",
       message: "",
       success: false,
       error: false
@@ -23,20 +23,22 @@ class Footer extends Component {
 
   ValidateSubmit = e => {
     e.preventDefault();
-    if (
-      this.state.name != "" &&
-      (this.state.email != "" &&
-        this.state.email.includes("@") &&
-        this.state.email.includes(".")) &&
-      this.state.message != ""
-    ) {
+    let mailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g;
+
+    if (this.state.name === "") {
+      alert('Uzupełnij imię');
+      this.setState({error: true},() => {this.timer = setTimeout(() => {this.setState({error: false});}, 1000);});
+    } else if (this.state.emailform === "" && !this.state.emailform.match(mailRegex)) {
+      alert('Niepoprawny adres mailowy');
+      this.setState({error: true},() => {this.timer = setTimeout(() => {this.setState({error: false});}, 1000);});
+    } else if (this.state.message === "") {
+      alert('Puste pole wiadomość');
+      this.setState({error: true},() => {this.timer = setTimeout(() => {this.setState({error: false});}, 1000);});
+    }
+
+    if (this.state.name !== "" && this.state.emailform !== "" && this.state.message !== "" ) {
       this.setState(
-        {
-          success: true,
-          name: "",
-          email: "",
-          message: ""
-        },
+        {success: true,name: "",emailform: "",message: ""},
         () => {
           this.timer = setTimeout(() => {
             this.setState({
@@ -46,20 +48,7 @@ class Footer extends Component {
           }, 1000);
         }
       );
-    } else {
-      this.setState(
-        {
-          error: true
-        },
-        () => {
-          this.timer = setTimeout(() => {
-            this.setState({
-              error: false
-            });
-          }, 1000);
-        }
-      );
-    }
+    } 
   };
 
   componentWillUnmount() {
@@ -81,13 +70,15 @@ class Footer extends Component {
                 placeholder="Imię"
                 value={this.state.name}
                 onChange={e => this.changeForm(e, "name")}
+                required
               />
               <input
                 type="email"
-                id="emailForm"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={e => this.changeForm(e, "emailForm")}
+                id="emailform"
+                placeholder="email"
+                value={this.state.emailform}
+                onChange={e => this.changeForm(e, "emailform")}
+                required
               />
             </div>
             <input
@@ -101,9 +92,6 @@ class Footer extends Component {
           </div>
           {this.state.success && (
             <span style={{ color: "red" }}>Formularz wysłany, dzięki</span>
-          )}
-          {this.state.error && (
-            <span style={{ color: "red" }}>Uzupełnij pola formularza</span>
           )}
         </div>
         <div className="footer__social">
